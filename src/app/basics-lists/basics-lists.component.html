@@ -1,0 +1,42 @@
+<section class="card mt-2">
+  <div class="card-header">
+    Dealing with lists
+  </div>
+  <div class="card-body">
+    <div class="row">
+      <div class="col-3">
+        <ul class="list-group">
+          <li class="list-group-item" *ngFor="let item of list">
+            {{item}}
+          </li>
+        </ul>
+      </div>
+
+      <div class="col-3">
+        <input type="text" class="form-control" placeholder="filter" name="filter" [(ngModel)]="filterModel">
+        <ul class="list-group mt-2">
+          <li class="list-group-item" *ngFor="let item of list | filter: filterModel">
+            {{item}}
+          </li>
+        </ul>
+      </div>
+
+      <div class="col-3">
+        <li class="list-group-item" *ngFor="let item of list; let i = index">
+          <button class="btn btn-info w-100" (click)="onItemClick(item, i)">{{i}}. {{item}}</button>
+        </li>
+      </div>
+
+      <div class="col-3">
+        <ul class="list-group">
+          <li class="list-group-item" *ngFor="let item of objectList">
+            <img class="rounded-circle" width="50" height="50" [src]="item.imagePath || defaultImagePath" alt="">
+            {{item.name}}
+            <small *ngIf="item.expYears > seniorYear" class="text-success">(Senior)</small>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>

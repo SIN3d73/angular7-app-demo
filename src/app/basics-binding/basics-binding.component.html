@@ -1,0 +1,25 @@
+<section class="card mt-2">
+  <div class="card-header">
+    Angular binding
+  </div>
+  <div class="card-body">
+    <div class="row">
+      <div class="col-3">
+        {{hello}}
+      </div>
+
+      <div class="col-3">
+        <div [innerHtml]="hello"></div>
+      </div>
+
+      <div class="col-3">
+        <input type="text" name="hello" class="form-control" [(ngModel)]="hello">
+      </div>
+
+      <div class="col-3">
+        {{hello | uppercase}}
+      </div>
+
+    </div>
+  </div>
+</section>

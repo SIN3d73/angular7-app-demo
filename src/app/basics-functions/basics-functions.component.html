@@ -1,0 +1,39 @@
+<section class="card mt-2">
+  <div class="card-header">
+    Calling functions
+  </div>
+  <div class="card-body">
+    <div class="row">
+      <div class="col-3">
+        <!--{{getTimestamp()}}-->
+
+        <input type="text"
+               placeholder="DD.MM.YYYY"
+               [(ngModel)]="date"
+               [bsConfig]="{ dateInputFormat: 'DD.MM.YYYY' }"
+               class="form-control"
+               bsDatepicker>
+      </div>
+
+      <div class="col-3">
+        <button class="btn btn-primary" (click)="onResetDate()">reset timestamp</button>
+      </div>
+
+      <div class="col-3">
+        <div class="input-group">
+
+          <input type="number" class="form-control" name="milis" [(ngModel)]="yearsCount">
+
+          <div class="input-group-append">
+            <button class="btn btn-default" (click)="onAddYears(yearsCount)">set</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-3">
+        {{date | date: 'dd.MM.yyyy'}}
+      </div>
+
+    </div>
+  </div>
+</section>
