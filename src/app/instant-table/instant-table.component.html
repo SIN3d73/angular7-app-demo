@@ -1,0 +1,20 @@
+<section class="table-responsive">
+  <table class="table">
+    <thead>
+    <tr>
+      <th *ngFor="let col of columns">{{col | titlecase}}</th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let row of data">
+      <td *ngFor="let col of columns">
+        {{row[col]}}
+      </td>
+      <td>
+        <button class="btn btn-sm btn-info" (click)="onEditClick(row.id)">Edit</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</section>
