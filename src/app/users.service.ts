@@ -3,12 +3,12 @@ import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs/internal/Observable';
 import {User} from './models/user';
 import {environment} from '../environments/environment';
+import {UpdateUserDto} from './models/update-user-dto';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UsersService {
-
 
   constructor(private http: HttpClient) {
   }
@@ -21,7 +21,8 @@ export class UsersService {
     return this.http.get<User>(`${environment.apiUrl}/users/${id}`);
   }
 
-  // updateUser(): Observable<User> {
-  //   return this.http.patch<User>(`${environment.apiUrl}/users`);
-  // }
+  updateUser(data: UpdateUserDto): Observable<User> {
+    return this.http.patch<User>(`${environment.apiUrl}/users`, data);
+  }
+
 }

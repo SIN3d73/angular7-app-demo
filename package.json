@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --proxy-config proxy.conf.json",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -19,13 +19,17 @@
     "@angular/platform-browser": "~7.2.0",
     "@angular/platform-browser-dynamic": "~7.2.0",
     "@angular/router": "~7.2.0",
+    "@devoto13/angular-fontawesome": "^0.3.0-2",
+    "@fortawesome/fontawesome-svg-core": "^1.2.17",
     "bootstrap": "4.2.1",
     "core-js": "^2.5.4",
     "moment": "^2.24.0",
     "ngx-bootstrap": "^4.0.1",
     "rxjs": "~6.3.3",
     "tslib": "^1.9.0",
-    "zone.js": "~0.8.26"
+    "zone.js": "~0.8.26",
+    "@fortawesome/free-solid-svg-icons": "^5.8.1",
+    "@fortawesome/free-regular-svg-icons": "^5.8.1"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.13.0",

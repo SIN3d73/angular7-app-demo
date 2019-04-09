@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 
+
 @Component({
   selector: 'de-basics-binding',
   templateUrl: './basics-binding.component.html',
@@ -7,7 +8,7 @@ import {Component, OnInit} from '@angular/core';
 })
 export class BasicsBindingComponent implements OnInit {
 
-  hello: string = 'Witam!';
+  hello: string = 'Hello!';
 
   constructor() {
   }

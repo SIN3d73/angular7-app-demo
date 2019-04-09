@@ -16,6 +16,11 @@ import {UsersComponent} from './users/users.component';
 import {InstantTableComponent} from './instant-table/instant-table.component';
 import {HttpClientModule} from '@angular/common/http';
 import {UserDetailsComponent} from './user-details/user-details.component';
+import {FontAwesomeModule} from '@devoto13/angular-fontawesome';
+
+import {library} from '@fortawesome/fontawesome-svg-core';
+import {fas} from '@fortawesome/free-solid-svg-icons';
+import {far} from '@fortawesome/free-regular-svg-icons';
 
 @NgModule({
   declarations: [
@@ -36,9 +41,14 @@ import {UserDetailsComponent} from './user-details/user-details.component';
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
+    FontAwesomeModule,
     BsDatepickerModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(){
+    library.add(fas, far);
+  }
+}

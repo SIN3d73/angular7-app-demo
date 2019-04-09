@@ -1,3 +1,38 @@
 <main class="container">
-
+  <form class="mt-5" noValidate (ngSubmit)="onFormSubmit()">
+    <section class="row">
+      <div class="col-6">
+        <div class="form-group">
+          <label>Name{{userModel.name}}</label>
+          <input name="name" type="text" class="form-control" [(ngModel)]="userModel.name">
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="form-group">
+          <label>Address</label>
+          <input name="address" type="text" class="form-control" [(ngModel)]="userModel.address">
+        </div>
+      </div>
+    </section>
+    <section class="row">
+      <div class="col-6">
+        <div class="form-group">
+          <label>Task</label>
+          <input name="task" type="text" class="form-control" [(ngModel)]="userModel.task">
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="form-group">
+          <label>Work progress</label>
+          <input name="workProgress" class="form-control" [(ngModel)]="userModel.workProgress" type="number"
+                 min="0" max="100" step="0.5">
+        </div>
+      </div>
+      <div class="col-3 d-flex">
+        <div class="form-group align-self-end">
+          <Button class="btn btn-primary" type="submit">Save <fa-icon icon="check"></fa-icon></Button>
+        </div>
+      </div>
+    </section>
+  </form>
 </main>

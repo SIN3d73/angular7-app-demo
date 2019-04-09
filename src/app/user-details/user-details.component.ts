@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {UsersService} from '../users.service';
+import {UpdateUserDto} from '../models/update-user-dto';
 
 @Component({
   selector: 'de-user-details',
@@ -9,16 +10,27 @@ import {UsersService} from '../users.service';
 })
 export class UserDetailsComponent implements OnInit {
 
+  userModel: UpdateUserDto = new UpdateUserDto();
+  isSyncAnimated=false;
+
   constructor(private userService: UsersService,
-              private route: ActivatedRoute) {
+              private route: ActivatedRoute,
+              private router: Router) {
   }
 
   ngOnInit() {
     this.route.params.subscribe((param) => {
       this.userService.getUserDetails(param.id).subscribe((data) => {
-        console.log(data);
+        this.userModel = data as UpdateUserDto;
+        // this.userModel = <UpdateUserDto>data;
       });
     });
+  }
+
+  onFormSubmit(){
+    this.userService.updateUser(this.userModel).subscribe(()=>{
+      this.router.navigate(['/users'])
+    })
   }
 
 }
