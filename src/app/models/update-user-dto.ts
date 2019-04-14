@@ -4,5 +4,4 @@ export class UpdateUserDto {
     address: string;
     workProgress: number;
     task: string;
-
 }

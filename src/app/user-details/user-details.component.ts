@@ -11,7 +11,6 @@ import {UpdateUserDto} from '../models/update-user-dto';
 export class UserDetailsComponent implements OnInit {
 
   userModel: UpdateUserDto = new UpdateUserDto();
-  isSyncAnimated=false;
 
   constructor(private userService: UsersService,
               private route: ActivatedRoute,
